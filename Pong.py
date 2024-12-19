@@ -2,10 +2,12 @@ from turtle import Turtle, Screen
 import random
 
 game = True
-boll_hastighet_x = random.randint(2, 4)
-boll_hastighet_y = random.randint(2, 4)
-boll2_hastighet_x = random.randint(2, 4)
-boll2_hastighet_y = random.randint(2, 4)
+boll_hastighet_x = random.randint(2, 5)
+boll_hastighet_y = random.randint(2, 5)
+boll2_hastighet_x = random.randint(2, 5)
+boll2_hastighet_y = random.randint(2, 5)
+
+colors = ("red","blue","green","yellow","orange","purple","pink","cyan","magenta","brown","white","gray","lightblue","lightgreen")
 
 score1 = 0
 score2 = 0
@@ -35,7 +37,7 @@ def flytta_ner2():
 
 def uppdatera_score():
     score.clear()
-    score.write(f"Player 1: {score1}  Player 2: {score2}", align="center", font=("Courier", 24, "normal"))
+    score.write(f"Player 1: {score2}  Player 2: {score1}", align="center", font=("Courier", 24, "normal"))
 
 def flytta_bollen():
     global boll_hastighet_x, boll_hastighet_y, score1, score2, game
@@ -117,7 +119,7 @@ spelfigur1.shapesize(5, 1, 1)
 spelfigur1.penup()
 spelfigur1.color("black")
 spelfigur1.setposition(380, 0)
-spelfigur1.color("white")
+spelfigur1.color(random.choice(colors))
 
 spelfigur2 = Turtle()
 spelfigur2.shape("square")
@@ -125,7 +127,7 @@ spelfigur2.shapesize(5, 1, 1)
 spelfigur2.penup()
 spelfigur2.color("black")
 spelfigur2.setposition(-380, 0)
-spelfigur2.color("white")
+spelfigur2.color(random.choice(colors))
 
 screen.listen()
 screen.onkey(flytta_upp, "Up")
@@ -135,12 +137,12 @@ screen.onkey(flytta_ner2, "s")
 
 boll = Turtle()
 boll.shape("circle")
-boll.color("white")
+boll.color(random.choice(colors))
 boll.penup()
 
 boll2 = Turtle()
 boll2.shape("circle")
-boll2.color("white")
+boll2.color(random.choice(colors))
 boll2.penup()
 
 while game:
