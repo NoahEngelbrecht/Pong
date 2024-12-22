@@ -1,5 +1,5 @@
-from turtle import Turtle, Screen  # Importerar Turtle och Screen klasserna från turtle-modulen
-import random  # Importerar random-modulen för att generera slumpmässiga värden
+from turtle import Turtle, Screen
+import random
 
 # Spelvariabler
 game = True  # Spelstatus, True betyder att spelet pågår
@@ -9,9 +9,7 @@ boll2_hastighet_x = random.randint(5, 10)  # Slumpar hastighet för den andra bo
 boll2_hastighet_y = random.randint(5, 10)  # Slumpar hastighet för den andra bollen i y-led
 
 # Lista med färger som kan användas för spelfigurer och bollar
-colors = ("red", "blue", "green", "yellow", "orange", 
-          "purple", "pink", "cyan", "magenta", "brown", 
-          "white", "gray", "lightblue", "lightgreen")
+colors = ("red", "blue", "green", "yellow", "orange","purple", "pink", "cyan", "magenta", "brown","white", "gray", "lightblue", "lightgreen")
 
 # Poängvariabler för spelarna
 score1 = 0  # Poäng för spelare 1
@@ -68,8 +66,8 @@ def flytta_bollen():
         boll_hastighet_y *= -1  # Vänder bollen i y-led
 
     # Kollar om bollen träffar spelarna
-    if (boll.xcor() > 355 and spelfigur1.ycor() - 50 < boll.ycor() < spelfigur1.ycor() + 50) or \
-       (boll.xcor() < -355 and spelfigur2.ycor() - 50 < boll.ycor() < spelfigur2.ycor() + 50):
+    if (boll.xcor() > 360 and spelfigur1.ycor() - 50 < boll.ycor() < spelfigur1.ycor() + 50) or \
+       (boll.xcor() < -360 and spelfigur2.ycor() - 50 < boll.ycor() < spelfigur2.ycor() + 50):
         boll_hastighet_x *= -1  # Vänder bollen i x-led
 
     # Kollar om bollen går utanför spelplanen till höger
@@ -110,8 +108,8 @@ def flytta_boll2():
         boll2_hastighet_y *= -1  # Vänder den andra bollen i y-led
 
     # Kollar om den andra bollen träffar spelarna
-    if (boll2.xcor() > 355 and spelfigur1.ycor() - 50 < boll2.ycor() < spelfigur1.ycor() + 50) or \
-       (boll2.xcor() < -355 and spelfigur2.ycor() - 50 < boll2.ycor() < spelfigur2.ycor() + 50):
+    if (boll2.xcor() > 360 and spelfigur1.ycor() - 50 < boll2.ycor() < spelfigur1.ycor() + 50) or \
+       (boll2.xcor() < -360 and spelfigur2.ycor() - 50 < boll2.ycor() < spelfigur2.ycor() + 50):
         boll2_hastighet_x *= -1  # Vänder den andra bollen i x-led
 
     # Kollar om den andra bollen går utanför spelplanen till höger
@@ -132,7 +130,7 @@ def flytta_boll2():
 
     # Kollar om någon spelare har nått 3 poäng
     if score1 == 3 or score2 == 3:
-        game = False  # Avslutar spelet
+        game = False  # Avslutar spelet  
 
 # Skapar spelplanen
 screen = Screen()
